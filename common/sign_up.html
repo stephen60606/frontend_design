@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" />
   <title>Sign Up - Smart Life Property Solutions</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
   <link rel="stylesheet" href="../css/style.css">
@@ -11,8 +13,8 @@
 <body>
   <header class="header">
     <a href="../index.html">
-      <div >
-          <img class="header-logo"  src="../image/Logo.png" alt="Logo" />
+      <div>
+        <img class="header-logo" src="../image/Logo.png" alt="Logo" />
         <h2 class="header-title">Smart Life Property Solutions</h2>
       </div>
     </a>
@@ -32,80 +34,94 @@
 
   <main class="main-container">
     <div class="flex-center">
-        <div class="form-container">
-            <h1 class="heading">Create your account</h1>
+      <div class="form-container">
+        <h1 class="heading">Create your account</h1>
 
-            <div class="form-group">
-                <label>
-                    <p class="label">Account Type</p>
-                    <select class="form-select" id="accountType">
-                        <option value="">Select account type</option>
-                        <option value="tenant">Tenant</option>
-                        <option value="manager">Property Manager</option>
-                    </select>
-                </label>
-            </div>
-
-            <div class="form-group">
-                <label>
-                    <p class="label">Email</p>
-                    <input type="email" placeholder="john.doe@example.com" class="form-input" />
-                </label>
-            </div>
-
-            <div class="form-group">
-                <label>
-                    <p class="label">Phone Number</p>
-                    <input type="tel" placeholder="+1 (555) 000-0000" class="form-input" />
-                </label>
-            </div>
-
-            <div class="form-group">
-                <label>
-                    <p class="label">Password</p>
-                    <input type="password" placeholder="********" class="form-input" />
-                </label>
-            </div>
-
-            <div class="form-group">
-                <label>
-                    <p class="label">Confirm Password</p>
-                    <input type="password" placeholder="********" class="form-input" />
-                </label>
-            </div>
-
-            <!-- Tenant-specific field -->
-            <div class="form-group hidden" id="tenantFields">
-                <label>
-                  <p class="label">Unit Number</p>
-                        <input type="text" placeholder="e.g. A-123" class="form-input" />
-                    </label>
-                </div>
-
-                <!-- Manager-specific field -->
-                <div class="form-group hidden" id="managerFields">
-                    <label>
-                        <p class="label">Role</p>
-                        <select class="form-select">
-                            <option value="">Select role</option>
-                            <option value="property_manager">Property Manager</option>
-                            <option value="maintenance">Maintenance Manager</option>
-                            <option value="admin">Administrative Manager</option>
-                        </select>
-                    </label>
-                </div>
-
-                <button class="login-button" id="createAccountButton">Create Account</button>
-
-                <div class="small-text">
-                    <p>
-                        Already have an account? 
-                        <a href="./login.html" class="link">Log in</a>
-                    </p>
-                </div>
-            </div>
+        <div class="form-group">
+          <label>
+            <p class="label">Account Type</p>
+            <select class="form-select" id="accountType">
+              <option value="" selected>Select account type</option>
+              <option value="tenant">Tenant</option>
+              <option value="manager">Property Manager</option>
+            </select>
+          </label>
         </div>
-    </main>
+
+        <div class="form-group">
+          <label>
+            <p class="label">Email</p>
+            <input type="email" placeholder="john.doe@example.com" class="form-input" />
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <p class="label">Phone Number</p>
+            <input type="tel" placeholder="+1 (555) 000-0000" class="form-input" />
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <p class="label">Password</p>
+            <input type="password" placeholder="********" class="form-input" />
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label>
+            <p class="label">Confirm Password</p>
+            <input type="password" placeholder="********" class="form-input" />
+          </label>
+        </div>
+
+        <!-- Tenant-specific field -->
+        <div calss="hidden_element" id="tenantFields">
+          <div class="form-group">
+            <label>
+              <p class="label">Licence Plate Number</p>
+              <input type="text" placeholder="e.g. A-123" class="form-input" />
+            </label>
+            <label>
+              <p class="label">Unit Number</p>
+              <input type="text" placeholder="e.g. 6969" class="form-input" />
+            </label>
+
+            <label>
+              <p class="label">Role</p>
+              <select class="form-select">
+                <option value="">Select role</option>
+                <option value="property_manager">Owner</option>
+                <option value="maintenance">Renter</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="hidden_element" id="managerFields">
+          <div class="form-group">
+            <label>
+              <p class="label">Role</p>
+              <select class="form-select">
+                <option value="">Select role</option>
+                <option value="property_manager">Property Manager</option>
+                <option value="maintenance">Maintenance Manager</option>
+                <option value="admin">Administrative Manager</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <button class="login-button" id="createAccountButton">Create Account</button>
+
+        <div class="small-text">
+          <p>
+            Already have an account?
+            <a href="./login.html" class="link">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
 
   <footer class="footer">
     <div class="social-icons">
@@ -135,22 +151,34 @@
   </footer>
 
   <script>
-    // Show/hide fields based on account type selection
-    document.getElementById('accountType').addEventListener('change', function() {
+    document.addEventListener("DOMContentLoaded", () => {
+      // Show/hide fields based on account type selection
       const tenantFields = document.getElementById('tenantFields');
       const managerFields = document.getElementById('managerFields');
-      
-      if (this.value === 'tenant') {
-        tenantFields.classList.remove('hidden');
-        managerFields.classList.add('hidden');
-      } else if (this.value === 'manager') {
-        tenantFields.classList.add('hidden');
-        managerFields.classList.remove('hidden');
-      } else {
-        tenantFields.classList.add('hidden');
-        managerFields.classList.add('hidden');
+
+      var e = document.getElementById("accountType");
+      var v = e.options[e.selectedIndex].value;
+      if (v != 'tenant' && v != 'manager') {
+        tenantFields.classList.add('hidden_element');
+        managerFields.classList.add('hidden_element');
       }
+      document.getElementById('accountType').addEventListener('change', function () {
+
+
+        if (this.value === 'tenant') {
+          tenantFields.classList.remove('hidden_element');
+          managerFields.classList.add('hidden_element');
+        } else if (this.value === 'manager') {
+          tenantFields.classList.add('hidden_element');
+          managerFields.classList.remove('hidden_element');
+        } else {
+
+          tenantFields.classList.add('hidden_element');
+          managerFields.classList.add('hidden_element');
+        }
+      });
     });
   </script>
 </body>
+
 </html>
