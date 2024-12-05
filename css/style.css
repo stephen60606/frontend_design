@@ -214,6 +214,10 @@ header {
     display: none;
   }
   
+.hint_text{
+  color: red;
+}
+
   .toggle-items-button {
     margin-bottom: 12px;
     padding: 8px 16px;
@@ -661,6 +665,17 @@ button:hover {
     background-color: #48dbfb;
 }
 
+.reserved {
+  background-color: #dc3545; /* Red */
+  color: white;
+  cursor: default;
+  border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
 
 
 /*Document*/

@@ -98,7 +98,7 @@
         <div class="content-container">
           <!-- Breadcrumb -->
           <div class="breadcrumb">
-            <a class="breadcrumb-item" href="#">Home</a>
+            <a class="breadcrumb-item" href="./index_tenant.html">Home</a>
             <span class="breadcrumb-separator">/</span>
             <span class="breadcrumb-item-active">Amenities</span>
           </div>
@@ -185,25 +185,47 @@
       </div>
     </div>
     <script>
-      document.getElementById("toggleItemsButton").addEventListener("click", function () {
-        const items = document.querySelectorAll(".available-item[data-status='unavailable']");
-        const button = document.getElementById("toggleItemsButton");
+      document.addEventListener("DOMContentLoaded", function () {
+        // Select all reserve buttons
+        const reserveButtons = document.querySelectorAll(".reserve-button");
+  
+      reserveButtons.forEach(button => {
+          button.addEventListener("click", function () {
+              // Log to ensure the click event is triggered
+              console.log("Button clicked:", this);
+  
+              // Check if the button is not already reserved
+              if (!this.classList.contains("reserved")) {
+                  console.log("Reserving the item");
+                  this.textContent = "Reserved"; 
+                  this.classList.remove("reserve-button");     // Change button text
+                  this.classList.add("reserved");     // Add the reserved class
+                  this.disabled = true;               // Disable the button
+              }
+          });
+      });
     
-        // Check if any of the unavailable items are currently hidden
-        const isHidden = items[0].classList.contains("hidden_element");
+        // Toggle Items Button Functionality
+        document.getElementById("toggleItemsButton").addEventListener("click", function () {
+            const items = document.querySelectorAll(".available-item[data-status='unavailable']");
+            const button = this;
     
-        if (isHidden) {
-            // Show unavailable items
-            items.forEach(item => item.classList.remove("hidden_element"));
-            button.textContent = "Hide Unavailable Items";
-        } else {
-            // Hide unavailable items
-            items.forEach(item => item.classList.add("hidden_element"));
-            button.textContent = "Show All Items";
-        }
+            const isHidden = items[0]?.classList.contains("hidden_element");
+    
+            if (isHidden) {
+                // Show all items
+                items.forEach(item => item.classList.remove("hidden_element"));
+                button.textContent = "Hide Unavailable Items";
+            } else {
+                // Hide unavailable items
+                items.forEach(item => item.classList.add("hidden_element"));
+                button.textContent = "Show All Items";
+            }
+        });
     });
     
-    </script>    
+    
+    </script>     
   
   
 

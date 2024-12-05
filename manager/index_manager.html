@@ -8,6 +8,7 @@
   <title>Smart Life Property Solution</title>
   <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/global.js"></script>
 </head>
 
 
@@ -63,32 +64,6 @@
       </div>
       </div>
 
-
-      <script>
-        function toggleNotifications() {
-          const dropdown = document.getElementById("notificationDropdown");
-          
-          if (dropdown.style.display === "none" || dropdown.style.display === "") {
-            dropdown.style.display = "block"; 
-            document.addEventListener("click", closeNotifications);
-          } else {
-            dropdown.style.display = "none"; 
-          }
-        }
-        
-        function closeNotifications(event) {
-          const dropdown = document.getElementById("notificationDropdown");
-          const button = document.getElementById("notificationButton");
-        
-          if (!dropdown.contains(event.target) && !button.contains(event.target)) {
-            dropdown.style.display = "none"; 
-            document.removeEventListener("click", closeNotifications);
-          }
-        }
-        
-        
-      </script>
-
       <div class="profile-icon"></div>
     </div>
   </header>
@@ -98,7 +73,7 @@
         <div class="header-content">
           <h1 class="welcome-title">Hi Dear Manager,</h1>
           <h1 class="welcome-title">Welcome to The Smart Life Property Solution</h1>
-          <h2 class="subtitle">Subtitle.</h2>
+          <h2 class="subtitle">Streamline Your Condo Management with Efficient, User-Friendly Software Solutions.</h2>
         </div>
         <div class="button-group">
           <a href="../index.html">
@@ -140,20 +115,6 @@
           <div class="amenity-image" style="background-image: url('../image/yard.JPG');"></div>
           <p class="amenity-name">Outdoor courtyard with fire pit</p>
           <p class="amenity-description">Enjoy fresh air and socialize with friends by the fire</p>
-        </div>
-      </div>
-      <div class="grid-layout">
-        <div class="flex-column">
-          <div class="background-image-container" style="background-image: url('../image/apartment.webp');"></div>
-        </div>
-        <div class="flex-column">
-          <div class="background-image-container" style="background-image: url('../image/apartment.webp');"></div>
-        </div>
-        <div class="flex-column">
-          <div class="background-image-container" style="background-image: url('../image/apartment.webp');"></div>
-        </div>
-        <div class="flex-column">
-          <div class="background-image-container" style="background-image: url('../image/apartment.webp');"></div>
         </div>
       </div>
     </div>
