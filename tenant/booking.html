@@ -188,7 +188,28 @@
       document.addEventListener("DOMContentLoaded", function () {
         // Select all reserve buttons
         const reserveButtons = document.querySelectorAll(".reserve-button");
-  
+        const calendarDays = document.querySelectorAll(".day-item, .day-item1, .selected");
+
+        // Add click event to each day
+        calendarDays.forEach(day => {
+          day.addEventListener("click", () => {
+            // Check if the clicked date is not selected
+            if (!day.classList.contains("selected")) {
+              // Find the currently selected date
+              const currentSelected = document.querySelector(".selected");
+    
+              // If there is a currently selected date, change it to range class
+              if (currentSelected) {
+                currentSelected.classList.remove("selected");
+                currentSelected.classList.add("day-item"); // Assign range class
+              }
+    
+              // Make the clicked date the selected class
+              day.classList.remove("day-item", "day-item1");
+              day.classList.add("selected");
+            }
+          });
+        });
       reserveButtons.forEach(button => {
           button.addEventListener("click", function () {
               // Log to ensure the click event is triggered
