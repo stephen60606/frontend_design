@@ -1,43 +1,44 @@
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" />
-  
-    <title>Smart Life Property Solution</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <link rel="stylesheet" href="../css/style.css">
-  </head>
-  
-  <body>
-    <header class="header">
-      <a href="../index.html">
-        <div>
-          <img class="header-logo" src="../image/Logo.png" alt="Logo" />
-          <h2 class="header-title">Smart Life Property Solutions</h2>
-        </div>
-      </a>
-      <div class="header-nav">
-        <div class="header-links">
-          <a class="nav-link" href="./index_tenant.html">Home</a>
-          <a class="nav-link" href="./announcements.html">Announcements</a>
-          <a class="nav-link" href="./booking.html">Amenity Booking</a>
-          <a class="nav-link" href="./communication.html">Groups</a>
-          <a class="nav-link" href="./document.html">Documents</a>
-        </div>
-        <div class="relative">
-          <button
-            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e7edf3] text-[#0e141b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
-            onclick="toggleNotifications()" id="notificationButton">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-              <path
-                d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
-              </path>
-            </svg>
-          </button>
-          <!-- Notification Dropdown -->
-          <!-- Notification Dropdown -->
-          <div id="notificationDropdown"
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" />
+
+  <title>Smart Life Property Solution</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="../index.html">
+      <div>
+        <img class="header-logo" src="../image/Logo.png" alt="Logo" />
+        <h2 class="header-title">Smart Life Property Solutions</h2>
+      </div>
+    </a>
+    <div class="header-nav">
+      <div class="header-links">
+        <a class="nav-link" href="./index_tenant.html">Home</a>
+        <a class="nav-link" href="./announcements.html">Announcements</a>
+        <a class="nav-link" href="./booking.html">Amenity Booking</a>
+        <a class="nav-link" href="./communication.html">Groups</a>
+        <a class="nav-link" href="./document.html">Documents</a>
+      </div>
+      <div class="relative">
+        <button
+          class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e7edf3] text-[#0e141b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+          onclick="toggleNotifications()" id="notificationButton">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+            </path>
+          </svg>
+        </button>
+        <!-- Notification Dropdown -->
+        <!-- Notification Dropdown -->
+        <div id="notificationDropdown"
           class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden">
           <div class="p-4 bg-blue-600 text-white font-bold rounded-t-lg">
             Notifications
@@ -60,197 +61,203 @@
             <a href="#" class="text-blue-600 hover:underline">View All</a>
           </div>
         </div>
-        </div>
-  
-  
-        <script>
-          function toggleNotifications() {
-            const dropdown = document.getElementById("notificationDropdown");
-            
-            if (dropdown.style.display === "none" || dropdown.style.display === "") {
-              dropdown.style.display = "block"; 
-              document.addEventListener("click", closeNotifications);
-            } else {
-              dropdown.style.display = "none"; 
-            }
-          }
-          
-          function closeNotifications(event) {
-            const dropdown = document.getElementById("notificationDropdown");
-            const button = document.getElementById("notificationButton");
-          
-            if (!dropdown.contains(event.target) && !button.contains(event.target)) {
-              dropdown.style.display = "none"; 
-              document.removeEventListener("click", closeNotifications);
-            }
-          }
-          
-          
-        </script>
-  
-        <div class="profile-icon"></div>
       </div>
-    </header>
 
-    <div class="layout-container">
-      <!-- Navigation -->
-      <div class="nav-container">
-        <div class="content-container">
-          <!-- Breadcrumb -->
-          <div class="breadcrumb">
-            <a class="breadcrumb-item" href="./index_tenant.html">Home</a>
-            <span class="breadcrumb-separator">/</span>
-            <span class="breadcrumb-item-active">Amenities</span>
-          </div>
-    
-          <!-- Title and button -->
 
-    
-          <!-- Calendar navigation and date grid -->
-          <div class="calendar-container">
-            <!-- First Calendar Card -->
-            <div class="calendar-card">
-              <div class="calendar-header">
-                <button>&lt;</button>
-                <p>August 2022</p>
-              </div>
-              <div class="calendar-grid">
-                <p>S</p><p>M</p><p>T</p><p>W</p><p>T</p><p>F</p><p>S</p>
-                <button class="day-item1">1</button>
-                <button class="day-item1">2</button>
-                <button class="day-item1">3</button>
-                <button class="day-item1">4</button>
-                <button class="selected">5</button>
-                <button class="day-item">6</button>
-                <button class="day-item">7</button>
-                <button class="day-item">8</button>
-                <button class="day-item">9</button>
-                <button class="day-item">10</button>
-                <button class="day-item">11</button>
-                <button class="day-item">12</button>
-                <button class="day-item">13</button>
-                <button class="day-item">14</button>
-                <button class="day-item">15</button>
-                <button class="day-item">16</button>
-                <button class="day-item">17</button>
-                <button class="day-item">18</button>
-                <button class="day-item">19</button>
-                <button class="day-item">20</button>
-                <button class="day-item">21</button>
-                <button class="day-item">22</button>
-                <button class="day-item">23</button>
-                <button class="day-item">24</button>
-                <button class="day-item">25</button>
-                <button class="day-item">26</button>
-                <button class="day-item">27</button>
-                <button class="day-item">28</button>
-                <button class="day-item">29</button>
-                <button class="day-item">30</button>
-                <button class="day-item">31</button>
-    
-                <!-- Add other days as needed -->
-              </div>
+      <script>
+        function toggleNotifications() {
+          const dropdown = document.getElementById("notificationDropdown");
+
+          if (dropdown.style.display === "none" || dropdown.style.display === "") {
+            dropdown.style.display = "block";
+            document.addEventListener("click", closeNotifications);
+          } else {
+            dropdown.style.display = "none";
+          }
+        }
+
+        function closeNotifications(event) {
+          const dropdown = document.getElementById("notificationDropdown");
+          const button = document.getElementById("notificationButton");
+
+          if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+            dropdown.style.display = "none";
+            document.removeEventListener("click", closeNotifications);
+          }
+        }
+
+
+      </script>
+
+      <div class="profile-icon"></div>
+    </div>
+  </header>
+
+  <div class="layout-container">
+    <!-- Navigation -->
+    <div class="nav-container">
+      <div class="content-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+          <a class="breadcrumb-item" href="./index_tenant.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-item-active">Amenities</span>
+        </div>
+
+        <!-- Title and button -->
+
+
+        <!-- Calendar navigation and date grid -->
+        <div class="calendar-container">
+          <!-- First Calendar Card -->
+          <div class="calendar-card">
+            <div class="calendar-header">
+              <button>&lt;</button>
+              <p>August 2022</p>
+            </div>
+            <div class="calendar-grid">
+              <p>S</p>
+              <p>M</p>
+              <p>T</p>
+              <p>W</p>
+              <p>T</p>
+              <p>F</p>
+              <p>S</p>
+              <button class="day-item1" disabled>1</button>
+              <button class="day-item1" disabled>2</button>
+              <button class="day-item1" disabled>3</button>
+              <button class="day-item1" disabled>4</button>
+              <button class="selected">5</button>
+              <button class="day-item">6</button>
+              <button class="day-item">7</button>
+              <button class="day-item">8</button>
+              <button class="day-item">9</button>
+              <button class="day-item">10</button>
+              <button class="day-item">11</button>
+              <button class="day-item">12</button>
+              <button class="day-item">13</button>
+              <button class="day-item">14</button>
+              <button class="day-item">15</button>
+              <button class="day-item">16</button>
+              <button class="day-item">17</button>
+              <button class="day-item">18</button>
+              <button class="day-item">19</button>
+              <button class="day-item">20</button>
+              <button class="day-item">21</button>
+              <button class="day-item">22</button>
+              <button class="day-item">23</button>
+              <button class="day-item">24</button>
+              <button class="day-item">25</button>
+              <button class="day-item">26</button>
+              <button class="day-item">27</button>
+              <button class="day-item">28</button>
+              <button class="day-item">29</button>
+              <button class="day-item">30</button>
+              <button class="day-item">31</button>
+
+              <!-- Add other days as needed -->
             </div>
           </div>
-    
-          <!-- Available Items Section -->
-          <div class="available-items-container">
-            <h3 class="available-items-title">Available Items</h3>
-            <button id="toggleItemsButton" class="toggle-items-button">Show All Items</button>
-            <ul id="availableItemsList" class="available-items-list">
-              <li class="available-item" data-status="available">
-                <div class="item-info">
-                  <p class="item-name">Treadmill</p>
-                  <p class="item-status available">Available</p>
-                </div>
-                <button class="reserve-button">Reserve</button>
-              </li>
-              <li class="hidden_element available-item" data-status="unavailable">
-                <div class="item-info">
-                  <p class="item-name">Stationary Bike</p>
-                  <p class="item-status unavailable">Unavailable</p>
-                </div>
-                <button class="reserve-button" disabled>Reserve</button>
-              </li>
-              <li class="available-item" data-status="available">
-                <div class="item-info">
-                  <p class="item-name">Elliptical</p>
-                  <p class="item-status available">Available</p>
-                </div>
-                <button class="reserve-button">Reserve</button>
-              </li>
-            </ul>
-          </div>
+        </div>
+
+        <!-- Available Items Section -->
+        <div class="available-items-container">
+          <h3 class="available-items-title">Available Items</h3>
+          <button id="toggleItemsButton" class="toggle-items-button">Show All Items</button>
+          <ul id="availableItemsList" class="available-items-list">
+            <li class="available-item" data-status="available">
+              <div class="item-info">
+                <p class="item-name">Treadmill</p>
+                <p class="item-status available">Available</p>
+              </div>
+              <button class="reserve-button">Reserve</button>
+            </li>
+            <li class="hidden_element available-item" data-status="unavailable">
+              <div class="item-info">
+                <p class="item-name">Stationary Bike</p>
+                <p class="item-status unavailable">Unavailable</p>
+              </div>
+              <button class="reserve-button" disabled>Reserve</button>
+            </li>
+            <li class="available-item" data-status="available">
+              <div class="item-info">
+                <p class="item-name">Elliptical</p>
+                <p class="item-status available">Available</p>
+              </div>
+              <button class="reserve-button">Reserve</button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Select all reserve buttons
-        const reserveButtons = document.querySelectorAll(".reserve-button");
-        const calendarDays = document.querySelectorAll(".day-item, .day-item1, .selected");
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Select all reserve buttons
+      const reserveButtons = document.querySelectorAll(".reserve-button");
+      const calendarDays = document.querySelectorAll(".day-item, .day-item1, .selected");
 
-        // Add click event to each day
-        calendarDays.forEach(day => {
-          day.addEventListener("click", () => {
-            // Check if the clicked date is not selected
-            if (!day.classList.contains("selected")) {
-              // Find the currently selected date
-              const currentSelected = document.querySelector(".selected");
-    
-              // If there is a currently selected date, change it to range class
-              if (currentSelected) {
-                currentSelected.classList.remove("selected");
-                currentSelected.classList.add("day-item"); // Assign range class
-              }
-    
-              // Make the clicked date the selected class
-              day.classList.remove("day-item", "day-item1");
-              day.classList.add("selected");
+      // Add click event to each day
+      calendarDays.forEach(day => {
+        day.addEventListener("click", () => {
+          // Check if the clicked date is not selected
+          if (!day.classList.contains("selected")) {
+            // Find the currently selected date
+            const currentSelected = document.querySelector(".selected");
+
+            // If there is a currently selected date, change it to range class
+            if (currentSelected) {
+              currentSelected.classList.remove("selected");
+              currentSelected.classList.add("day-item"); // Assign range class
             }
-          });
+
+            // Make the clicked date the selected class
+            day.classList.remove("day-item", "day-item1");
+            day.classList.add("selected");
+          }
         });
-      reserveButtons.forEach(button => {
-          button.addEventListener("click", function () {
-              // Log to ensure the click event is triggered
-              console.log("Button clicked:", this);
-  
-              // Check if the button is not already reserved
-              if (!this.classList.contains("reserved")) {
-                  console.log("Reserving the item");
-                  this.textContent = "Reserved"; 
-                  this.classList.remove("reserve-button");     // Change button text
-                  this.classList.add("reserved");     // Add the reserved class
-                  this.disabled = true;               // Disable the button
-              }
-          });
       });
-    
-        // Toggle Items Button Functionality
-        document.getElementById("toggleItemsButton").addEventListener("click", function () {
-            const items = document.querySelectorAll(".available-item[data-status='unavailable']");
-            const button = this;
-    
-            const isHidden = items[0]?.classList.contains("hidden_element");
-    
-            if (isHidden) {
-                // Show all items
-                items.forEach(item => item.classList.remove("hidden_element"));
-                button.textContent = "Hide Unavailable Items";
-            } else {
-                // Hide unavailable items
-                items.forEach(item => item.classList.add("hidden_element"));
-                button.textContent = "Show All Items";
-            }
-        });
-    });
-    
-    
-    </script>     
-  
-  
+      reserveButtons.forEach(button => {
+        button.addEventListener("click", function () {
+          // Log to ensure the click event is triggered
+          console.log("Button clicked:", this);
 
-    <footer class="footer">
+          // Check if the button is not already reserved
+          if (!this.classList.contains("reserved")) {
+            console.log("Reserving the item");
+            this.textContent = "Reserved";
+            this.classList.remove("reserve-button");     // Change button text
+            this.classList.add("reserved");     // Add the reserved class
+            this.disabled = true;               // Disable the button
+          }
+        });
+      });
+
+      // Toggle Items Button Functionality
+      document.getElementById("toggleItemsButton").addEventListener("click", function () {
+        const items = document.querySelectorAll(".available-item[data-status='unavailable']");
+        const button = this;
+
+        const isHidden = items[0]?.classList.contains("hidden_element");
+
+        if (isHidden) {
+          // Show all items
+          items.forEach(item => item.classList.remove("hidden_element"));
+          button.textContent = "Hide Unavailable Items";
+        } else {
+          // Hide unavailable items
+          items.forEach(item => item.classList.add("hidden_element"));
+          button.textContent = "Show All Items";
+        }
+      });
+    });
+
+
+  </script>
+
+
+
+  <footer class="footer">
     <div class="social-icons">
       <a href="#" class="social-icon" aria-label="Facebook">
         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -276,5 +283,6 @@
     </div>
     <p class="footer-text">© 2024 The Smart Life Property Solution</p>
   </footer>
-  </body>
+</body>
+
 </html>
