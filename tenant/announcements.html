@@ -42,65 +42,65 @@
         <!-- Notification Dropdown -->
         <!-- Notification Dropdown -->
         <div id="notificationDropdown"
-        class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden">
-        <div class="p-4 bg-blue-600 text-white font-bold rounded-t-lg">
-          Notifications
+          class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden">
+          <div class="p-4 bg-blue-600 text-white font-bold rounded-t-lg">
+            Notifications
+          </div>
+          <ul class="divide-y divide-gray-200">
+            <li class="notificationDropdown p-4">
+              <strong>Notification 1</strong>
+              <p class="text-sm text-gray-500">This is the description for notification1.</p>
+            </li>
+            <li class="notificationDropdown p-4">
+              <strong>Notification 2</strong>
+              <p class="text-sm text-gray-500">This is the description for notification2.</p>
+            </li>
+            <li class="notificationDropdown p-4">
+              <strong>Notification 3</strong>
+              <p class="text-sm text-gray-500">This is the description for notification3.</p>
+            </li>
+          </ul>
+          <div class="notificationDropdown p-4">
+            <a href="#" class="text-blue-600 hover:underline">View All</a>
+          </div>
         </div>
-        <ul class="divide-y divide-gray-200">
-          <li class="notificationDropdown p-4">
-            <strong>Notification 1</strong>
-            <p class="text-sm text-gray-500">This is the description for notification1.</p>
-          </li>
-          <li class="notificationDropdown p-4">
-            <strong>Notification 2</strong>
-            <p class="text-sm text-gray-500">This is the description for notification2.</p>
-          </li>
-          <li class="notificationDropdown p-4">
-            <strong>Notification 3</strong>
-            <p class="text-sm text-gray-500">This is the description for notification3.</p>
-          </li>
-        </ul>
-        <div class="notificationDropdown p-4">
-          <a href="#" class="text-blue-600 hover:underline">View All</a>
-        </div>
-      </div>
       </div>
 
 
       <script>
         function toggleNotifications() {
           const dropdown = document.getElementById("notificationDropdown");
-          
+
           if (dropdown.style.display === "none" || dropdown.style.display === "") {
-            dropdown.style.display = "block"; 
+            dropdown.style.display = "block";
             document.addEventListener("click", closeNotifications);
           } else {
-            dropdown.style.display = "none"; 
+            dropdown.style.display = "none";
           }
         }
-        
+
         function closeNotifications(event) {
           const dropdown = document.getElementById("notificationDropdown");
           const button = document.getElementById("notificationButton");
-        
+
           if (!dropdown.contains(event.target) && !button.contains(event.target)) {
-            dropdown.style.display = "none"; 
+            dropdown.style.display = "none";
             document.removeEventListener("click", closeNotifications);
           }
         }
-        
-        
+
+
       </script>
 
       <div class="profile-icon"></div>
     </div>
   </header>
-  
+
   <div class="layout-container">
     <div class="layout-content-container">
       <!-- Section Title -->
       <h1 class="event-maintenance-title">Events & Maintenance</h1>
-  
+
       <!-- Tag Buttons -->
       <div class="tag-container">
         <button class="tag-pill-button">All</button>
@@ -111,7 +111,7 @@
         <button class="tag-pill-button">Fitness</button>
         <button class="tag-pill-button">Maintenance</button>
       </div>
-  
+
       <!-- Search Bar -->
       <div class="search-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
@@ -121,7 +121,7 @@
         </svg>
         <input type="text" placeholder="Search events, classes, workshops..." />
       </div>
-  
+
       <!-- Calendar Section -->
       <div class="calendar-container">
         <!-- First Calendar Card -->
@@ -131,43 +131,47 @@
             <p>August 2022</p>
           </div>
           <div class="calendar-grid">
-            <p>S</p><p>M</p><p>T</p><p>W</p><p>T</p><p>F</p><p>S</p>
-            <button class="day-item1">1</button>
-            <button class="day-item1">2</button>
-            <button class="day-item1">3</button>
-            <button class="day-item1">4</button>
-            <button class="selected">5</button>
-            <button class="day-item">6</button>
-            <button class="day-item">7</button>
-            <button class="day-item">8</button>
-            <button class="day-item">9</button>
-            <button class="day-item">10</button>
-            <button class="day-item">11</button>
-            <button class="day-item">12</button>
-            <button class="day-item">13</button>
-            <button class="day-item">14</button>
-            <button class="day-item">15</button>
-            <button class="day-item">16</button>
-            <button class="day-item">17</button>
-            <button class="day-item">18</button>
-            <button class="day-item">19</button>
-            <button class="day-item">20</button>
-            <button class="day-item">21</button>
-            <button class="day-item">22</button>
-            <button class="day-item">23</button>
-            <button class="day-item">24</button>
-            <button class="day-item">25</button>
-            <button class="day-item">26</button>
-            <button class="day-item">27</button>
-            <button class="day-item">28</button>
-            <button class="day-item">29</button>
-            <button class="day-item">30</button>
-            <button class="day-item">31</button>
-
-            <!-- Add other days as needed -->
+            <p>S</p>
+            <p>M</p>
+            <p>T</p>
+            <p>W</p>
+            <p>T</p>
+            <p>F</p>
+            <p>S</p>
+            <button class="day-item1" id="801">1</button>
+            <button class="day-item1" id="802">2</button>
+            <button class="day-item1" id="803">3</button>
+            <button class="day-item1" id="804">4</button>
+            <button class="selected" id="805">5</button>
+            <button class="day-item" id="806">6</button>
+            <button class="day-item" id="807">7</button>
+            <button class="day-item" id="808">8</button>
+            <button class="day-item" id="809">9</button>
+            <button class="day-item" id="810">10</button>
+            <button class="day-item" id="811">11</button>
+            <button class="day-item" id="812">12</button>
+            <button class="day-item" id="813">13</button>
+            <button class="day-item" id="814">14</button>
+            <button class="day-item" id="815">15</button>
+            <button class="day-item" id="816">16</button>
+            <button class="day-item" id="817">17</button>
+            <button class="day-item" id="818">18</button>
+            <button class="day-item" id="819">19</button>
+            <button class="day-item" id="820">20</button>
+            <button class="day-item" id="821">21</button>
+            <button class="day-item" id="822">22</button>
+            <button class="day-item" id="823">23</button>
+            <button class="day-item" id="824">24</button>
+            <button class="day-item" id="825">25</button>
+            <button class="day-item" id="826">26</button>
+            <button class="day-item" id="827">27</button>
+            <button class="day-item" id="828">28</button>
+            <button class="day-item" id="829">29</button>
+            <button class="day-item" id="830">30</button>
+            <button class="day-item" id="831">31</button>
           </div>
         </div>
-  
+
         <!-- Second Calendar Card -->
         <div class="calendar-card">
           <div class="calendar-header">
@@ -175,38 +179,43 @@
             <button>&gt;</button>
           </div>
           <div class="calendar-grid">
-            <p>S</p><p>M</p><p>T</p><p>W</p><p>T</p><p>F</p><p>S</p>
-            <button class="day-item">1</button>
-            <button class="day-item">2</button>
-            <button class="day-item">3</button>
-            <button class="day-item">4</button>
-            <button class="day-item">5</button>
-            <button class="day-item">6</button>
-            <button class="selected">7</button>
-            <button class="day-item1">8</button>
-            <button class="day-item1">9</button>
-            <button class="day-item1">10</button>
-            <button class="day-item1">11</button>
-            <button class="day-item1">12</button>
-            <button class="day-item1">13</button>
-            <button class="day-item1">14</button>
-            <button class="day-item1">15</button>
-            <button class="day-item1">16</button>
-            <button class="day-item1">17</button>
-            <button class="day-item1">18</button>
-            <button class="day-item1">19</button>
-            <button class="day-item1">20</button>
-            <button class="day-item1">21</button>
-            <button class="day-item1">22</button>
-            <button class="day-item1">23</button>
-            <button class="day-item1">24</button>
-            <button class="day-item1">25</button>
-            <button class="day-item1">26</button>
-            <button class="day-item1">27</button>
-            <button class="day-item1">28</button>
-            <button class="day-item1">29</button>
-            <button class="day-item1">30</button>
-            <!-- Add other days as needed -->
+            <p>S</p>
+            <p>M</p>
+            <p>T</p>
+            <p>W</p>
+            <p>T</p>
+            <p>F</p>
+            <p>S</p>
+            <button class="day-item" id="901">1</button>
+            <button class="day-item" id="902">2</button>
+            <button class="day-item" id="903">3</button>
+            <button class="day-item" id="904">4</button>
+            <button class="day-item" id="905">5</button>
+            <button class="day-item" id="906">6</button>
+            <button class="selected" id="907">7</button>
+            <button class="day-item1" id="908">8</button>
+            <button class="day-item1" id="909">9</button>
+            <button class="day-item1" id="910">10</button>
+            <button class="day-item1" id="911">11</button>
+            <button class="day-item1" id="912">12</button>
+            <button class="day-item1" id="913">13</button>
+            <button class="day-item1" id="914">14</button>
+            <button class="day-item1" id="915">15</button>
+            <button class="day-item1" id="916">16</button>
+            <button class="day-item1" id="917">17</button>
+            <button class="day-item1" id="918">18</button>
+            <button class="day-item1" id="919">19</button>
+            <button class="day-item1" id="920">20</button>
+            <button class="day-item1" id="921">21</button>
+            <button class="day-item1" id="922">22</button>
+            <button class="day-item1" id="923">23</button>
+            <button class="day-item1" id="924">24</button>
+            <button class="day-item1" id="925">25</button>
+            <button class="day-item1" id="926">26</button>
+            <button class="day-item1" id="927">27</button>
+            <button class="day-item1" id="928">28</button>
+            <button class="day-item1" id="929">29</button>
+            <button class="day-item1" id="930">30</button>
           </div>
         </div>
       </div>
@@ -217,8 +226,10 @@
         <div class="event-container">
           <div class="event-details-container">
             <div class="event-icon-container">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                <path d="M212,80a28,28,0,1,0,28,28A28,28,0,0,0,212,80Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,212,120ZM72,108a28,28,0,1,0-28,28A28,28,0,0,0,72,108ZM44,120a12,12,0,1,1,12-12A12,12,0,0,1,44,120ZM92,88A28,28,0,1,0,64,60,28,28,0,0,0,92,88Zm0-40A12,12,0,1,1,80,60,12,12,0,0,1,92,48Zm72,40a28,28,0,1,0-28-28A28,28,0,0,0,164,88Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,48Zm23.12,100.86a35.3,35.3,0,0,1-16.87-21.14,44,44,0,0,0-84.5,0A35.25,35.25,0,0,1,69,148.82,40,40,0,0,0,88,224a39.48,39.48,0,0,0,15.52-3.13,64.09,64.09,0,0,1,48.87,0,40,40,0,0,0,34.73-72ZM168,208a24,24,0,0,1-9.45-1.93,80.14,80.14,0,0,0-61.19,0,24,24,0,0,1-20.71-43.26,51.22,51.22,0,0,0,24.46-30.67,28,28,0,0,1,53.78,0,51.27,51.27,0,0,0,24.53,30.71A24,24,0,0,1,168,208Z">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor"
+                viewBox="0 0 256 256">
+                <path
+                  d="M212,80a28,28,0,1,0,28,28A28,28,0,0,0,212,80Zm0,40a12,12,0,1,1,12-12A12,12,0,0,1,212,120ZM72,108a28,28,0,1,0-28,28A28,28,0,0,0,72,108ZM44,120a12,12,0,1,1,12-12A12,12,0,0,1,44,120ZM92,88A28,28,0,1,0,64,60,28,28,0,0,0,92,88Zm0-40A12,12,0,1,1,80,60,12,12,0,0,1,92,48Zm72,40a28,28,0,1,0-28-28A28,28,0,0,0,164,88Zm0-40a12,12,0,1,1-12,12A12,12,0,0,1,164,48Zm23.12,100.86a35.3,35.3,0,0,1-16.87-21.14,44,44,0,0,0-84.5,0A35.25,35.25,0,0,1,69,148.82,40,40,0,0,0,88,224a39.48,39.48,0,0,0,15.52-3.13,64.09,64.09,0,0,1,48.87,0,40,40,0,0,0,34.73-72ZM168,208a24,24,0,0,1-9.45-1.93,80.14,80.14,0,0,0-61.19,0,24,24,0,0,1-20.71-43.26,51.22,51.22,0,0,0,24.46-30.67,28,28,0,0,1,53.78,0,51.27,51.27,0,0,0,24.53,30.71A24,24,0,0,1,168,208Z">
                 </path>
               </svg>
             </div>
@@ -228,28 +239,86 @@
             </div>
           </div>
         </div>
-  
+
         <!-- Add additional event containers as needed -->
       </div>
     </div>
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const calendarDays = document.querySelectorAll(".day-item, .day-item1, .selected");
+      let firstSelected = null;
+      let secondSelected = null;
+
+      // Function to reset all dates to day-item1
+      const resetClasses = () => {
+        calendarDays.forEach(day => {
+          day.className = "day-item1"; // Reset class to day-item1
+        });
+        firstSelected = null;
+        secondSelected = null;
+      };
+
+      // Function to highlight the range between two IDs
+      const highlightRange = () => {
+        if (!firstSelected || !secondSelected) return;
+
+        const startId = Math.min(parseInt(firstSelected.id), parseInt(secondSelected.id));
+        const endId = Math.max(parseInt(firstSelected.id), parseInt(secondSelected.id));
+
+        calendarDays.forEach(day => {
+          const dayId = parseInt(day.id);
+          if (dayId > startId && dayId < endId) {
+            day.className = "day-item"; // Highlight range with "day-item"
+          }
+        });
+      };
+
+      // Add click event to each day
+      calendarDays.forEach(day => {
+        day.addEventListener("click", () => {
+          // If no selection or two dates already selected, reset
+          if (!firstSelected || (firstSelected && secondSelected)) {
+            resetClasses();
+            firstSelected = day;
+            firstSelected.classList.remove("day-item1");
+            firstSelected.classList.add("selected");
+          } else if (!secondSelected) {
+            // Second selection
+            secondSelected = day;
+            secondSelected.classList.remove("day-item1");
+            secondSelected.classList.add("selected");
+
+            // Highlight range
+            highlightRange();
+          }
+        });
+      });
+    });
+  </script>
 
 
   <footer class="footer">
     <div class="social-icons">
       <a href="#" class="social-icon" aria-label="Facebook">
         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-          <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+          <path
+            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+          </path>
         </svg>
       </a>
       <a href="#" class="social-icon" aria-label="Twitter">
         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-          <path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+          <path
+            d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z">
+          </path>
         </svg>
       </a>
       <a href="#" class="social-icon" aria-label="Instagram">
         <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-          <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+          <path
+            d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+          </path>
         </svg>
       </a>
     </div>

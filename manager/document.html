@@ -94,7 +94,7 @@
     <div class="wrapper">
       <div class="sidebar">
         <div class="new-button-container">
-          <button class="new-button" >New</button>
+          <button class="new-button" id="newtype">New</button>
         </div>
         <ul class="document-types-list">
           <li class="login-button">All</li>
@@ -135,6 +135,21 @@
       </div>
     </div>
     </div>
+    <!-- Popup Modal -->
+<div id="newTypePopup" class="popup-overlay" style="display: none;">
+  <div class="popup-content">
+    <h2>Add New Type</h2>
+    <form id="newTypeForm">
+      <label for="typeName">Type Name:</label>
+      <input type="text" id="typeName" name="typeName" required />
+      <div class="popup-actions">
+        <button type="submit" class="login-button">Add Type</button>
+        <button type="button" class="popup-cancel-button" id="cancelPopupBtn">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
     <div id="postFormModal" class="modal">
       <div class="modal-content">
         <button id="closeFormBtn" class="close-btn">&times;</button>
@@ -173,6 +188,14 @@
     
     
     <script>
+      document.getElementById('newtype').onclick = function() {
+        document.getElementById('newTypePopup').style.display = "flex";
+    }
+  
+    // Close the form when the close button is clicked
+    document.getElementById('cancelPopupBtn').onclick = function() {
+        document.getElementById('newTypePopup').style.display = "none";
+    }
       // Show the form when the 'Post' button is clicked
       document.getElementById('openFormBtn').onclick = function() {
           document.getElementById('postFormModal').style.display = "block";
