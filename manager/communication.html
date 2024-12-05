@@ -1,38 +1,30 @@
 <html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
 
-    <title>Galileo Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <header
-    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8eef3] px-10 py-3 bg-white shadow-md">
+  <title>Smart Life Property Solution</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="header">
     <a href="../index.html">
-      <div class="flex items-center gap-4 text-[#0e161b]">
-        <div class="size-10">
-          <img src="../image/Logo.png" alt="Logo" />
-
-        </div>
-        <h2 class="text-[#0e161b] text-lg font-bold leading-tight tracking-[-0.015em]">Smart Life Property Solutions
-        </h2>
+      <div>
+        <img class="header-logo" src="../image/Logo.png" alt="Logo" />
+        <h2 class="header-title">Smart Life Property Solutions</h2>
       </div>
     </a>
-    <div class="flex flex-1 justify-end gap-8">
-      <div class="flex items-center gap-9">
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./index_manager.html">Home</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./annoucements.html">Announcements</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./booking.html">Events</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./communication.html">Groups</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./document.html">Documents</a>
+    <div class="header-nav">
+      <div class="header-links">
+        <a class="nav-link" href="./index_manager.html">Home</a>
+        <a class="nav-link" href="./announcements.html">Announcements</a>
+        <a class="nav-link" href="./booking.html">Amenity Booking</a>
+        <a class="nav-link" href="./communication.html">Groups</a>
+        <a class="nav-link" href="./document.html">Documents</a>
       </div>
       <div class="relative">
         <button
@@ -46,26 +38,25 @@
         </button>
         <!-- Notification Dropdown -->
         <div id="notificationDropdown"
-          class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg hidden"
-          style="z-index: 1000">
+          class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden">
           <div class="p-4 bg-blue-600 text-white font-bold rounded-t-lg">
             Notifications
           </div>
           <ul class="divide-y divide-gray-200">
-            <li class="p-4 hover:bg-gray-50 transition duration-200">
+            <li class="notificationDropdown p-4">
               <strong>Notification 1</strong>
               <p class="text-sm text-gray-500">This is the description for notification1.</p>
             </li>
-            <li class="p-4 hover:bg-gray-50 transition duration-200">
+            <li class="notificationDropdown p-4">
               <strong>Notification 2</strong>
               <p class="text-sm text-gray-500">This is the description for notification2.</p>
             </li>
-            <li class="p-4 hover:bg-gray-50 transition duration-200">
+            <li class="notificationDropdown p-4">
               <strong>Notification 3</strong>
               <p class="text-sm text-gray-500">This is the description for notification3.</p>
             </li>
           </ul>
-          <div class="p-4 text-center text-sm text-gray-500 border-t">
+          <div class="notificationDropdown p-4">
             <a href="#" class="text-blue-600 hover:underline">View All</a>
           </div>
         </div>
@@ -75,11 +66,12 @@
       <script>
         function toggleNotifications() {
           const dropdown = document.getElementById("notificationDropdown");
-          dropdown.classList.toggle("hidden");
 
-          if (!dropdown.classList.contains("hidden")) {
-            // Add a click event listener to the document to close the dropdown
+          if (dropdown.style.display === "none" || dropdown.style.display === "") {
+            dropdown.style.display = "block";
             document.addEventListener("click", closeNotifications);
+          } else {
+            dropdown.style.display = "none";
           }
         }
 
@@ -87,350 +79,153 @@
           const dropdown = document.getElementById("notificationDropdown");
           const button = document.getElementById("notificationButton");
 
-          // Check if the click is outside the dropdown and the button
           if (!dropdown.contains(event.target) && !button.contains(event.target)) {
-            dropdown.classList.add("hidden");
-            // Remove the event listener after closing
+            dropdown.style.display = "none";
             document.removeEventListener("click", closeNotifications);
           }
         }
+
+
       </script>
 
-      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-        style='background-image: url("../image/headshot.jpg");'></div>
+      <div class="profile-icon"></div>
     </div>
   </header>
-  <div class="relative flex flex-col min-h-screen pt-[72px] pb-[56px] bg-[#f8fafb] overflow-x-hidden"
-    style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
-    <div class="relative flex size-full min-h-screen flex-col bg-slate-50 group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[920px] flex-1">
-            <div class="flex items-center px-4 py-3 gap-3 @container">
-              <label class="flex flex-col min-w-40 h-full flex-1">
-                <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
-                  <div class="flex border border-[#d0dbe7] bg-slate-50 justify-end pl-[15px] pr-[15px] pt-[15px] rounded-l-xl border-r-0">
-                    <div
-                      class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0"
-                      style='background-image: url("https://cdn.usegalileo.ai/stability/929ac1ed-c174-4b00-90a8-d6d404e14966.png");'
-                    ></div>
-                  </div>
-                  <div class="flex flex-1 flex-col">
-                    <textarea
-                      placeholder="What's new, Emma?"
-                      class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0e141b] focus:outline-0 focus:ring-0 border border-[#d0dbe7] bg-slate-50 focus:border-[#d0dbe7] h-auto placeholder:text-[#aec1d5] rounded-l-none border-l-0 pl-2 rounded-b-none border-b-0 text-base font-normal leading-normal pt-[22px]"
-                    ></textarea>
-                    <div class="flex border border-[#d0dbe7] bg-slate-50 justify-end pr-[15px] rounded-br-xl border-l-0 border-t-0 px-[15px] pb-[15px]">
-                      <div class="flex items-center gap-4 justify-end">
-                        <div class="flex items-center gap-1">
-                          <button class="flex items-center justify-center p-1.5">
-                            <div class="text-[#4e7297]" data-icon="Image" data-size="20px" data-weight="regular">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                  d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </button>
-                          <button class="flex items-center justify-center p-1.5">
-                            <div class="text-[#4e7297]" data-icon="Link" data-size="20px" data-weight="regular">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                  d="M137.54,186.36a8,8,0,0,1,0,11.31l-9.94,10A56,56,0,0,1,48.38,128.4L72.5,104.28A56,56,0,0,1,149.31,102a8,8,0,1,1-10.64,12,40,40,0,0,0-54.85,1.63L59.7,139.72a40,40,0,0,0,56.58,56.58l9.94-9.94A8,8,0,0,1,137.54,186.36Zm70.08-138a56.08,56.08,0,0,0-79.22,0l-9.94,9.95a8,8,0,0,0,11.32,11.31l9.94-9.94a40,40,0,0,1,56.58,56.58L172.18,140.4A40,40,0,0,1,117.33,142,8,8,0,1,0,106.69,154a56,56,0,0,0,76.81-2.26l24.12-24.12A56.08,56.08,0,0,0,207.62,48.38Z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </button>
-                          <button class="flex items-center justify-center p-1.5">
-                            <div class="text-[#4e7297]" data-icon="MusicNote" data-size="20px" data-weight="regular">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                  d="M210.3,56.34l-80-24A8,8,0,0,0,120,40V148.26A48,48,0,1,0,136,184V98.75l69.7,20.91A8,8,0,0,0,216,112V64A8,8,0,0,0,210.3,56.34ZM88,216a32,32,0,1,1,32-32A32,32,0,0,1,88,216ZM200,101.25l-64-19.2V50.75L200,70Z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </button>
-                          <button class="flex items-center justify-center p-1.5">
-                            <div class="text-[#4e7297]" data-icon="Smiley" data-size="20px" data-weight="regular">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                                <path
-                                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM80,108a12,12,0,1,1,12,12A12,12,0,0,1,80,108Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,176,108Zm-1.07,48c-10.29,17.79-27.4,28-46.93,28s-36.63-10.2-46.92-28a8,8,0,1,1,13.84-8c7.47,12.91,19.21,20,33.08,20s25.61-7.1,33.07-20a8,8,0,0,1,13.86,8Z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </button>
-                        </div>
-                        <button
-                          class="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#1770cf] text-slate-50 text-sm font-medium leading-normal hidden @[480px]:block"
-                        >
-                          <span class="truncate">Post</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </label>
-            </div>
-            <div class="p-4 @container">
-              <div class="flex flex-1 flex-col items-start justify-between gap-4 rounded-xl border border-[#d0dbe7] bg-slate-50 p-5 @[480px]:flex-row @[480px]:items-center">
-                <p class="text-[#0e141b] text-base font-bold leading-tight">Your last post is doing 3x better than your average post.</p>
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#1770cf] text-slate-50 text-sm font-medium leading-normal"
-                >
-                  <span class="truncate">View Insights</span>
-                </button>
-              </div>
-            </div>
-            <div class="pb-3">
-              <div class="flex border-b border-[#d0dbe7] px-4 gap-8">
-                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#1770cf] text-[#0e141b] pb-[13px] pt-4" href="#">
-                  <p class="text-[#0e141b] text-sm font-bold leading-normal tracking-[0.015em]">All Feed</p>
-                </a>
-                <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4e7297] pb-[13px] pt-4" href="#">
-                  <p class="text-[#4e7297] text-sm font-bold leading-normal tracking-[0.015em]">My Feed</p>
-                </a>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
-                style='background-image: url("https://cdn.usegalileo.ai/stability/9f5b2c10-6730-48fb-b652-9b477d4d132e.png");'
-              ></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">Chad T. shared a link</p>
-                <p class="text-[#4e7297] text-sm font-normal leading-normal line-clamp-2">1h ago</p>
-              </div>
-            </div>
-            <p class="text-[#0e141b] text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Great article on how to make your home more eco-friendly. It's easy to implement these tips in your condo.
-            </p>
-            <div class="flex w-full grow bg-slate-50 @container p-4">
-              <div class="w-full gap-1 overflow-hidden bg-slate-50 @[480px]:gap-2 aspect-[3/2] rounded-xl flex">
-                <div
-                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/fb636124-5787-4828-a618-5589fe848832.png");'
-                ></div>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-4 px-4 py-2 py-2">
-              <div class="flex items-center justify-center gap-2 px-3 py-2">
-                <div class="text-[#4e7297]" data-icon="Heart" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
-                    ></path>
-                  </svg>
-                </div>
-                <p class="text-[#4e7297] text-[13px] font-bold leading-normal tracking-[0.015em]">120</p>
-              </div>
-              <div class="flex items-center justify-center gap-2 px-3 py-2">
-                <div class="text-[#4e7297]" data-icon="ChatCircle" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
-                    ></path>
-                  </svg>
-                </div>
-                <p class="text-[#4e7297] text-[13px] font-bold leading-normal tracking-[0.015em]">15</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
-                style='background-image: url("https://cdn.usegalileo.ai/stability/c6cd3057-d80d-4aad-aa80-439b7420065c.png");'
-              ></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">Emma W. shared a photo</p>
-                <p class="text-[#4e7297] text-sm font-normal leading-normal line-clamp-2">2h ago</p>
-              </div>
-            </div>
-            <div class="flex w-full grow bg-slate-50 @container p-4">
-              <div class="w-full gap-1 overflow-hidden bg-slate-50 @[480px]:gap-2 aspect-[3/2] rounded-xl flex">
-                <div
-                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
-                  style='background-image: url("https://cdn.usegalileo.ai/stability/a1625ccf-4b5b-492d-a388-a04809b6965c.png");'
-                ></div>
-              </div>
-            </div>
-            <div class="flex flex-wrap gap-4 px-4 py-2 py-2">
-              <div class="flex items-center justify-center gap-2 px-3 py-2">
-                <div class="text-[#4e7297]" data-icon="Heart" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
-                    ></path>
-                  </svg>
-                </div>
-                <p class="text-[#4e7297] text-[13px] font-bold leading-normal tracking-[0.015em]">120</p>
-              </div>
-              <div class="flex items-center justify-center gap-2 px-3 py-2">
-                <div class="text-[#4e7297]" data-icon="ChatCircle" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
-                    ></path>
-                  </svg>
-                </div>
-                <p class="text-[#4e7297] text-[13px] font-bold leading-normal tracking-[0.015em]">15</p>
-              </div>
-            </div>
+
+  <div class="layout-container">
+    <div class="main-content">
+      <!-- Feed Section -->
+      <section class="feed">
+        <div class="post-input">
+          <div class="user-info">
+            <!-- Cartoon AI-generated Profile Image -->
+            <img src="../image/image2.jpg" alt="Emma">
+
+            <span class="user-name">Emily</span>
           </div>
-          <div class="layout-content-container flex flex-col w-[360px]">
-            <div class="flex h-full min-h-[700px] flex-col justify-between bg-slate-50 p-4">
-              <div class="flex flex-col gap-4">
-                <h1 class="text-[#0e141b] text-base font-medium leading-normal">Community</h1>
-                <div class="flex flex-col gap-2">
-                  <div class="flex items-center gap-3 px-3 py-2 rounded-xl bg-[#e7edf3]">
-                    <div class="text-[#0e141b]" data-icon="House" data-size="24px" data-weight="fill">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0e141b] text-sm font-medium leading-normal">Overview</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0e141b]" data-icon="Users" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0e141b] text-sm font-medium leading-normal">Residents</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0e141b]" data-icon="User" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0e141b] text-sm font-medium leading-normal">Groups</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0e141b]" data-icon="Calendar" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0e141b] text-sm font-medium leading-normal">Events</p>
-                  </div>
-                  <div class="flex items-center gap-3 px-3 py-2">
-                    <div class="text-[#0e141b]" data-icon="Wrench" data-size="24px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M226.76,69a8,8,0,0,0-12.84-2.88l-40.3,37.19-17.23-3.7-3.7-17.23,37.19-40.3A8,8,0,0,0,187,29.24,72,72,0,0,0,88,96,72.34,72.34,0,0,0,94,124.94L33.79,177c-.15.12-.29.26-.43.39a32,32,0,0,0,45.26,45.26c.13-.13.27-.28.39-.42L131.06,162A72,72,0,0,0,232,96,71.56,71.56,0,0,0,226.76,69ZM160,152a56.14,56.14,0,0,1-27.07-7,8,8,0,0,0-9.92,1.77L67.11,211.51a16,16,0,0,1-22.62-22.62L109.18,133a8,8,0,0,0,1.77-9.93,56,56,0,0,1,58.36-82.31l-31.2,33.81a8,8,0,0,0-1.94,7.1L141.83,108a8,8,0,0,0,6.14,6.14l26.35,5.66a8,8,0,0,0,7.1-1.94l33.81-31.2A56.06,56.06,0,0,1,160,152Z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p class="text-[#0e141b] text-sm font-medium leading-normal">Services</p>
-                  </div>
-                </div>
-              
-            <div class="flex p-4 @container">
-              <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
-                <div class="flex gap-4">
-                  <div
-                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
-                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/5267fb11-a1ed-4dbb-97f6-b3de3a9c5693.png");'
-                  ></div>
-                  <div class="flex flex-col justify-center">
-                    <p class="text-[#0e141b] text-[22px] font-bold leading-tight tracking-[-0.015em]">The Marlowe</p>
-                    <p class="text-[#4e7297] text-base font-normal leading-normal">123 Main St, San Francisco, CA</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex px-4 py-3">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#1770cf] text-slate-50 text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Create Announcement</span>
-              </button>
-            </div>
-            <div class="flex px-4 py-3">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#e7edf3] text-[#0e141b] text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Host an Event</span>
-              </button>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
-                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/67f7d722-6886-40ee-8132-1a0cfc3da354.png");'
-              ></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">Sustainability Committee</p>
-                <p class="text-[#4e7297] text-sm font-normal leading-normal line-clamp-2">10 members</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
-                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/24359e8a-57c4-44b7-aafc-708fb7d81491.png");'
-              ></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">Summer BBQ Planning</p>
-                <p class="text-[#4e7297] text-sm font-normal leading-normal line-clamp-2">5 members</p>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
-                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/8c8d5f06-956b-41b7-b624-9b5b15dacba0.png");'
-              ></div>
-              <div class="flex flex-col justify-center">
-                <p class="text-[#0e141b] text-base font-medium leading-normal line-clamp-1">Pet Policy Task Force</p>
-                <p class="text-[#4e7297] text-sm font-normal leading-normal line-clamp-2">12 members</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <textarea placeholder="What's new, Emma?"></textarea>
+
+          <div class="post-stats">
+            <button class="btn-primary " id="openFormBtn">Post</button>
 
           </div>
         </div>
-      </div>
+
+        <!-- New Feed Item: Building Post -->
+        <div class="feed-item">
+          <div class="user-info">
+            <!-- Cartoon AI-generated Profile Image -->
+            <img src="../image/image3.jpg" alt="Chad T">
+            <span class="user-name">Chad T.</span>
+          </div>
+          <p>I am writing to inform you that my unit (211) has suffered severe flooding due to the negligence of XYZ
+            Restorations.
+            This is completely unacceptable!!
+          </p>
+          <div class="shared-link">
+            <!-- Building Image -->
+            <img src="../image/FLOODING.jpg" alt="Building Image">
+          </div>
+          <div class="post-actions">
+            <!-- Like Button -->
+            <button class="like-btn">Like</button>
+            <!-- Comment Button -->
+            <button class="comment-btn" onclick="toggleCommentBox()">Comment</button>
+          </div>
+
+          <!-- Comment Box (Hidden initially) -->
+          <div class="comment-box hidden_element" id="comment_box">
+            <textarea placeholder="Write a comment..."></textarea>
+            <button>Post Comment</button>
+          </div>
+
+          <!-- Display Comments (Example) -->
+          <div class="comments">
+            <p><strong>Emma:</strong> Oh no! I am so sorry to hear about your loss! Hope things will get sorted out
+              soon!</p>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
-  <footer
-  class="fixed bottom-0 left-0 right-0 z-50 bg-[#f8fafb] py-3 text-center border-t border-solid border-t-[#e8eef3]"
->
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="#">
-                  <div class="text-[#507a95]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="text-[#507a95]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="text-[#507a95]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-              <p class="text-[#507a95] text-base font-normal leading-normal">© 2024 The Smart Life Property Solution</p>
-        </footer>
-  </body>
+  <div id="postFormModal" class="modal">
+    <div class="modal-content">
+      <button id="closeFormBtn" class="close-btn">&times;</button>
+      <h2 class="modal-title">Create a Post</h2>
+      <form id="postForm" class="modal-form">
+        <!-- File Upload -->
+        <div class="form-group">
+          <label for="imageUpload" class="form-label">Select File:</label>
+          <input type="file" id="imageUpload" name="image" accept="image/*" required class="form-input" />
+        </div>
+        <button type="submit" class="btn-primary">Post</button>
+      </form>
+    </div>
+
+    <script>
+      // Show the form when the 'Post' button is clicked
+      document.getElementById('openFormBtn').onclick = function () {
+        document.getElementById('postFormModal').style.display = "block";
+      }
+
+      // Close the form when the close button is clicked
+      document.getElementById('closeFormBtn').onclick = function () {
+        document.getElementById('postFormModal').style.display = "none";
+      }
+
+      // Submit the form
+      document.getElementById('postForm').onsubmit = function (event) {
+        event.preventDefault();  // Prevent the form from refreshing the page
+
+        let caption = document.getElementById('caption').value;
+        let image = document.getElementById('imageUpload').files[0];
+
+        if (image && caption) {
+          alert(`Post submitted with caption: ${caption}`);
+          document.getElementById('postFormModal').style.display = "none";  // Close form after submission
+        }
+      }
+
+      function toggleCommentBox() {
+        console.log('comment')
+        item = document.getElementById("comment_box")
+        const isHidden = item.classList.contains("hidden_element");
+        if (isHidden) {
+          // Show unavailable items
+          item.classList.remove("hidden_element");
+        } else {
+          // Hide unavailable items
+        item.classList.add("hidden_element");
+        }
+      }
+
+    </script>
+    <footer class="footer">
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+            </path>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z">
+            </path>
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+            </path>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-text">© 2024 The Smart Life Property Solution</p>
+    </footer>
+</body>
+
 </html>

@@ -1,351 +1,237 @@
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <title>Smart Life Property</title>
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" />
+  
+    <title>Smart Life Property Solution</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
+  
   <body>
-    <header
-    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e8eef3] px-10 py-3 bg-white shadow-md">
-    <a href="../index.html">
-      <div class="flex items-center gap-4 text-[#0e161b]">
-        <div class="size-10">
-          <img src="../image/Logo.png" alt="Logo" />
-
+    <header class="header">
+      <a href="../index.html">
+        <div>
+          <img class="header-logo" src="../image/Logo.png" alt="Logo" />
+          <h2 class="header-title">Smart Life Property Solutions</h2>
         </div>
-        <h2 class="text-[#0e161b] text-lg font-bold leading-tight tracking-[-0.015em]">Smart Life Property Solutions
-        </h2>
-      </div>
-    </a>
-    <div class="flex flex-1 justify-end gap-8">
-      <div class="flex items-center gap-9">
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./index_tanent.html">Home</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./announcements.html">Announcements</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./booking.html">Events</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./communication.html">Groups</a>
-        <a class="text-[#0e141b] text-sm font-medium leading-normal" href="./document.html">Documents</a>
-      </div>
-      <div class="relative">
-        <button
-          class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e7edf3] text-[#0e141b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
-          onclick="toggleNotifications()" id="notificationButton">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-            <path
-              d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
-            </path>
-          </svg>
-        </button>
-        <!-- Notification Dropdown -->
-        <div id="notificationDropdown"
-          class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg hidden"
-          style="z-index: 1000">
+      </a>
+      <div class="header-nav">
+        <div class="header-links">
+          <a class="nav-link" href="./index_tanent.html">Home</a>
+          <a class="nav-link" href="./announcements.html">Announcements</a>
+          <a class="nav-link" href="./booking.html">Amenity Booking</a>
+          <a class="nav-link" href="./communication.html">Groups</a>
+          <a class="nav-link" href="./document.html">Documents</a>
+        </div>
+        <div class="relative">
+          <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e7edf3] text-[#0e141b] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+            onclick="toggleNotifications()" id="notificationButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+              <path
+                d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z">
+              </path>
+            </svg>
+          </button>
+          <!-- Notification Dropdown -->
+          <!-- Notification Dropdown -->
+          <div id="notificationDropdown"
+          class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden">
           <div class="p-4 bg-blue-600 text-white font-bold rounded-t-lg">
             Notifications
           </div>
           <ul class="divide-y divide-gray-200">
-            <li class="p-4 hover:bg-gray-50 transition duration-200">
+            <li class="notificationDropdown p-4">
               <strong>Notification 1</strong>
               <p class="text-sm text-gray-500">This is the description for notification1.</p>
             </li>
-            <li class="p-4 hover:bg-gray-50 transition duration-200">
+            <li class="notificationDropdown p-4">
               <strong>Notification 2</strong>
               <p class="text-sm text-gray-500">This is the description for notification2.</p>
             </li>
-            <li class="p-4 hover:bg-gray-50 transition duration-200">
+            <li class="notificationDropdown p-4">
               <strong>Notification 3</strong>
               <p class="text-sm text-gray-500">This is the description for notification3.</p>
             </li>
           </ul>
-          <div class="p-4 text-center text-sm text-gray-500 border-t">
+          <div class="notificationDropdown p-4">
             <a href="#" class="text-blue-600 hover:underline">View All</a>
           </div>
         </div>
+        </div>
+  
+  
+        <script>
+          function toggleNotifications() {
+            const dropdown = document.getElementById("notificationDropdown");
+            
+            if (dropdown.style.display === "none" || dropdown.style.display === "") {
+              dropdown.style.display = "block"; 
+              document.addEventListener("click", closeNotifications);
+            } else {
+              dropdown.style.display = "none"; 
+            }
+          }
+          
+          function closeNotifications(event) {
+            const dropdown = document.getElementById("notificationDropdown");
+            const button = document.getElementById("notificationButton");
+          
+            if (!dropdown.contains(event.target) && !button.contains(event.target)) {
+              dropdown.style.display = "none"; 
+              document.removeEventListener("click", closeNotifications);
+            }
+          }
+          
+          
+        </script>
+  
+        <div class="profile-icon"></div>
       </div>
+    </header>
 
+    <div class="layout-container">
+      <!-- Navigation -->
+      <div class="nav-container">
+        <div class="content-container">
+          <!-- Breadcrumb -->
+          <div class="breadcrumb">
+            <a class="breadcrumb-item" href="#">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item-active">Amenities</span>
+          </div>
+    
+          <!-- Title and button -->
 
-      <script>
-        function toggleNotifications() {
-          const dropdown = document.getElementById("notificationDropdown");
-          dropdown.classList.toggle("hidden");
-
-          if (!dropdown.classList.contains("hidden")) {
-            // Add a click event listener to the document to close the dropdown
-            document.addEventListener("click", closeNotifications);
-          }
-        }
-
-        function closeNotifications(event) {
-          const dropdown = document.getElementById("notificationDropdown");
-          const button = document.getElementById("notificationButton");
-
-          // Check if the click is outside the dropdown and the button
-          if (!dropdown.contains(event.target) && !button.contains(event.target)) {
-            dropdown.classList.add("hidden");
-            // Remove the event listener after closing
-            document.removeEventListener("click", closeNotifications);
-          }
-        }
-      </script>
-
-      <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-        style='background-image: url("../image/headshot.jpg");'></div>
-    </div>
-  </header>
-  <div class="relative flex flex-col min-h-screen pt-[72px] pb-[56px] bg-[#f8fafb] overflow-x-hidden"
-    style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
-
-
-    <div class="relative flex size-full min-h-screen flex-col bg-[#f8fafb] group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#0e161b] tracking-light text-[32px] font-bold leading-tight min-w-72">Meeting Room</p>
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#e8eef3] text-[#0e161b] text-sm font-medium leading-normal"
-              >
-                <span class="truncate">View all times</span>
-              </button>
-            </div>
-            <div class="flex flex-wrap items-center justify-center gap-6 p-4">
-              <div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5">
-                <div class="flex items-center p-1 justify-between">
-                  <button>
-                    <div class="text-[#0e161b] flex size-10 items-center justify-center" data-icon="CaretLeft" data-size="18px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
-                        <path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path>
-                      </svg>
-                    </div>
-                  </button>
-                  <p class="text-[#0e161b] text-base font-bold leading-tight flex-1 text-center">October 2023</p>
-                  <button>
-                    <div class="text-[#0e161b] flex size-10 items-center justify-center" data-icon="CaretRight" data-size="18px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="currentColor" viewBox="0 0 256 256">
-                        <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                      </svg>
-                    </div>
-                  </button>
-                </div>
-                <div class="grid grid-cols-7">
-                  <p class="text-[#0e161b] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
-                  <p class="text-[#0e161b] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">M</p>
-                  <p class="text-[#0e161b] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">T</p>
-                  <p class="text-[#0e161b] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">W</p>
-                  <p class="text-[#0e161b] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">T</p>
-                  <p class="text-[#0e161b] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">F</p>
-                  <p class="text-[#0e161b] text-[13px] font-bold leading-normal tracking-[0.015em] flex h-12 w-full items-center justify-center pb-0.5">S</p>
-                  <button class="h-12 w-full text-[#0e161b] col-start-4 text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">1</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">2</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">3</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">4</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full bg-[#3aa0e4]">5</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">6</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">7</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">8</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">9</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">10</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">11</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">12</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">13</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">14</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">15</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">16</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">17</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">18</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">19</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">20</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">21</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">22</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">23</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">24</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">25</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">26</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">27</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">28</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">29</div>
-                  </button>
-                  <button class="h-12 w-full text-[#0e161b] text-sm font-medium leading-normal">
-                    <div class="flex size-full items-center justify-center rounded-full">30</div>
-                  </button>
-                </div>
+    
+          <!-- Calendar navigation and date grid -->
+          <div class="calendar-container">
+            <!-- First Calendar Card -->
+            <div class="calendar-card">
+              <div class="calendar-header">
+                <button>&lt;</button>
+                <p>August 2022</p>
               </div>
-            </div>
-            <h3 class="text-[#0e161b] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Available times</h3>
-            <div class="flex items-center gap-4 bg-[#f8fafb] px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex items-center gap-4">
-                <div class="text-[#0e161b] flex items-center justify-center rounded-lg bg-[#e8eef3] shrink-0 size-12" data-icon="Calendar" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="flex flex-col justify-center">
-                  <p class="text-[#0e161b] text-base font-medium leading-normal line-clamp-1">Oct 7, 2023</p>
-                  <p class="text-[#507a95] text-sm font-normal leading-normal line-clamp-2">4:00pm - 5:00pm</p>
-                </div>
-              </div>
-              <div class="shrink-0">
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#e8eef3] text-[#0e161b] text-sm font-medium leading-normal w-fit"
-                >
-                  <span class="truncate">Book now</span>
-                </button>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-[#f8fafb] px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex items-center gap-4">
-                <div class="text-[#0e161b] flex items-center justify-center rounded-lg bg-[#e8eef3] shrink-0 size-12" data-icon="Calendar" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="flex flex-col justify-center">
-                  <p class="text-[#0e161b] text-base font-medium leading-normal line-clamp-1">Oct 7, 2023</p>
-                  <p class="text-[#507a95] text-sm font-normal leading-normal line-clamp-2">4:00pm - 5:00pm</p>
-                </div>
-              </div>
-              <div class="shrink-0">
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#e8eef3] text-[#0e161b] text-sm font-medium leading-normal w-fit"
-                >
-                  <span class="truncate">Book now</span>
-                </button>
-              </div>
-            </div>
-            <div class="flex items-center gap-4 bg-[#f8fafb] px-4 min-h-[72px] py-2 justify-between">
-              <div class="flex items-center gap-4">
-                <div class="text-[#0e161b] flex items-center justify-center rounded-lg bg-[#e8eef3] shrink-0 size-12" data-icon="Calendar" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path
-                      d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z"
-                    ></path>
-                  </svg>
-                </div>
-                <div class="flex flex-col justify-center">
-                  <p class="text-[#0e161b] text-base font-medium leading-normal line-clamp-1">Oct 7, 2023</p>
-                  <p class="text-[#507a95] text-sm font-normal leading-normal line-clamp-2">4:00pm - 5:00pm</p>
-                </div>
-              </div>
-              <div class="shrink-0">
-                <button
-                  class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 bg-[#e8eef3] text-[#0e161b] text-sm font-medium leading-normal w-fit"
-                >
-                  <span class="truncate">Book now</span>
-                </button>
+              <div class="calendar-grid">
+                <p>S</p><p>M</p><p>T</p><p>W</p><p>T</p><p>F</p><p>S</p>
+                <button class="day-item1">1</button>
+                <button class="day-item1">2</button>
+                <button class="day-item1">3</button>
+                <button class="day-item1">4</button>
+                <button class="selected">5</button>
+                <button class="day-item">6</button>
+                <button class="day-item">7</button>
+                <button class="day-item">8</button>
+                <button class="day-item">9</button>
+                <button class="day-item">10</button>
+                <button class="day-item">11</button>
+                <button class="day-item">12</button>
+                <button class="day-item">13</button>
+                <button class="day-item">14</button>
+                <button class="day-item">15</button>
+                <button class="day-item">16</button>
+                <button class="day-item">17</button>
+                <button class="day-item">18</button>
+                <button class="day-item">19</button>
+                <button class="day-item">20</button>
+                <button class="day-item">21</button>
+                <button class="day-item">22</button>
+                <button class="day-item">23</button>
+                <button class="day-item">24</button>
+                <button class="day-item">25</button>
+                <button class="day-item">26</button>
+                <button class="day-item">27</button>
+                <button class="day-item">28</button>
+                <button class="day-item">29</button>
+                <button class="day-item">30</button>
+                <button class="day-item">31</button>
+    
+                <!-- Add other days as needed -->
               </div>
             </div>
           </div>
+    
+          <!-- Available Items Section -->
+          <div class="available-items-container">
+            <h3 class="available-items-title">Available Items</h3>
+            <button id="toggleItemsButton" class="toggle-items-button">Show All Items</button>
+            <ul id="availableItemsList" class="available-items-list">
+              <li class="available-item" data-status="available">
+                <div class="item-info">
+                  <p class="item-name">Treadmill</p>
+                  <p class="item-status available">Available</p>
+                </div>
+                <button class="reserve-button">Reserve</button>
+              </li>
+              <li class="hidden_element available-item" data-status="unavailable">
+                <div class="item-info">
+                  <p class="item-name">Stationary Bike</p>
+                  <p class="item-status unavailable">Unavailable</p>
+                </div>
+                <button class="reserve-button" disabled>Reserve</button>
+              </li>
+              <li class="available-item" data-status="available">
+                <div class="item-info">
+                  <p class="item-name">Elliptical</p>
+                  <p class="item-status available">Available</p>
+                </div>
+                <button class="reserve-button">Reserve</button>
+              </li>
+            </ul>
+          </div>
         </div>
-        
       </div>
     </div>
+    <script>
+      document.getElementById("toggleItemsButton").addEventListener("click", function () {
+        const items = document.querySelectorAll(".available-item[data-status='unavailable']");
+        const button = document.getElementById("toggleItemsButton");
+    
+        // Check if any of the unavailable items are currently hidden
+        const isHidden = items[0].classList.contains("hidden_element");
+    
+        if (isHidden) {
+            // Show unavailable items
+            items.forEach(item => item.classList.remove("hidden_element"));
+            button.textContent = "Hide Unavailable Items";
+        } else {
+            // Hide unavailable items
+            items.forEach(item => item.classList.add("hidden_element"));
+            button.textContent = "Show All Items";
+        }
+    });
+    
+    </script>    
+  
+  
 
+    <footer class="footer">
+    <div class="social-icons">
+      <a href="#" class="social-icon" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path
+            d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z">
+          </path>
+        </svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Twitter">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path
+            d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z">
+          </path>
+        </svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+          <path
+            d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z">
+          </path>
+        </svg>
+      </a>
     </div>
-
-
-    <footer
-  class="fixed bottom-0 left-0 right-0 z-50 bg-[#f8fafb] py-3 text-center border-t border-solid border-t-[#e8eef3]"
->
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="#">
-                  <div class="text-[#507a95]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="text-[#507a95]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="text-[#507a95]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-              <p class="text-[#507a95] text-base font-normal leading-normal">© 2024 The Smart Life Property Solution</p>
-        </footer>
+    <p class="footer-text">© 2024 The Smart Life Property Solution</p>
+  </footer>
   </body>
 </html>

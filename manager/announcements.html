@@ -12,8 +12,6 @@
 
 
 <body>
-
-
   <header class="header">
     <a href="../index.html">
       <div>
@@ -23,7 +21,7 @@
     </a>
     <div class="header-nav">
       <div class="header-links">
-        <a class="nav-link" href="./index_tanent.html">Home</a>
+        <a class="nav-link" href="./index_manager.html">Home</a>
         <a class="nav-link" href="./announcements.html">Announcements</a>
         <a class="nav-link" href="./booking.html">Amenity Booking</a>
         <a class="nav-link" href="./communication.html">Groups</a>
@@ -39,7 +37,6 @@
             </path>
           </svg>
         </button>
-        <!-- Notification Dropdown -->
         <!-- Notification Dropdown -->
         <div id="notificationDropdown"
         class="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden">
@@ -95,32 +92,7 @@
       <div class="profile-icon"></div>
     </div>
   </header>
-  
-  <script>
-    function toggleNotifications() {
-      const dropdown = document.getElementById("notificationDropdown");
-      dropdown.classList.toggle("hidden");
-    
-      if (!dropdown.classList.contains("hidden")) {
-        // Add event listener to detect clicks outside the dropdown
-        document.addEventListener("click", closeNotifications);
-      }
-    }
-    
-    function closeNotifications(event) {
-      const dropdown = document.getElementById("notificationDropdown");
-      const button = document.getElementById("notificationButton");
-    
-      // Check if the click is outside the dropdown and the button
-      if (!dropdown.contains(event.target) && !button.contains(event.target)) {
-        dropdown.classList.add("hidden");
-        // Remove the event listener after closing
-        document.removeEventListener("click", closeNotifications);
-      }
-    }
-    
-  </script>
-  
+
   <div class="layout-container">
     <div class="layout-content-container">
       <!-- Section Title -->
@@ -252,6 +224,7 @@
               <p class="event-subtitle">By Acme Co</p>
             </div>
           </div>
+          <button class="edit-button">Edit</button>
         </div>
         <div class="event-container">
           <div class="event-details-container">
@@ -266,6 +239,7 @@
               <p class="event-subtitle">By Acme Co</p>
             </div>
           </div>
+          <button class="edit-button">Edit</button>
         </div>
         <div class="event-container">
           <div class="event-details-container">
@@ -280,6 +254,7 @@
               <p class="event-subtitle">By Acme Co</p>
             </div>
           </div>
+          <button class="edit-button">Edit</button>
         </div>
         <div class="event-container">
           <div class="event-details-container">
@@ -294,6 +269,7 @@
               <p class="event-subtitle">By Acme Co</p>
             </div>
           </div>
+          <button class="edit-button">Edit</button>
         </div>
         <div class="event-container">
           <div class="event-details-container">
@@ -308,13 +284,13 @@
               <p class="event-subtitle">By Acme Co</p>
             </div>
           </div>
+          <button class="edit-button">Edit</button>
         </div>
   
         <!-- Add additional event containers as needed -->
       </div>
     </div>
   </div>
-
 
   <footer class="footer">
     <div class="social-icons">
