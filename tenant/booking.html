@@ -167,21 +167,21 @@
           <ul id="availableItemsList" class="available-items-list">
             <li class="available-item" data-status="available">
               <div class="item-info">
-                <p class="item-name">Treadmill</p>
+                <button class="item-name" name="Treadmill">Treadmill</button>
                 <p class="item-status available">Available</p>
               </div>
               <button class="reserve-button">Reserve</button>
             </li>
             <li class="hidden_element available-item" data-status="unavailable">
               <div class="item-info">
-                <p class="item-name">Stationary Bike</p>
+                <button class="item-name" name="Stationary Bike">Stationary Bike</button>
                 <p class="item-status unavailable">Unavailable</p>
               </div>
               <button class="reserve-button" disabled>Reserve</button>
             </li>
             <li class="available-item" data-status="available">
               <div class="item-info">
-                <p class="item-name">Elliptical</p>
+                <button class="item-name" name="Elliptical">Elliptical</button>
                 <p class="item-status available">Available</p>
               </div>
               <button class="reserve-button">Reserve</button>
@@ -191,6 +191,18 @@
       </div>
     </div>
   </div>
+  <div id="itemPopup" class="hidden_element">
+    <div class="popup-overlay">
+      <div class="popup-content">
+        <button id="closePopup" class="popup-cancel-button">X</button>
+        <h3 id="popupItemName">Item Name</h3>
+        <p><strong>Location:</strong> <span id="popupItemLocation"></span></p>
+        <p><strong>Description:</strong> <span id="popupItemDescription"></span></p>
+        <p><strong>Reserve Required:</strong> <span id="popupReserveRequired"></span></p>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Select all reserve buttons
@@ -250,6 +262,56 @@
           button.textContent = "Show All Items";
         }
       });
+
+
+      const itemDetails = {
+        "Treadmill": {
+          location: "Gym Room 1",
+          description: "A high-quality treadmill for cardio workouts.",
+          reserveRequired: "Yes",
+        },
+        "Stationary Bike": {
+          location: "Gym Room 2",
+          description: "A comfortable bike for cycling enthusiasts.",
+          reserveRequired: "No",
+        },
+        "Elliptical": {
+          location: "Gym Room 3",
+          description: "Perfect for low-impact cardio training.",
+          reserveRequired: "Yes",
+        },
+      };
+
+      const viewButtons = document.querySelectorAll(".item-name");
+      const popup = document.getElementById("itemPopup");
+      const popupTitle = document.getElementById("popupItemName");
+      const popupLocation = document.getElementById("popupItemLocation");
+      const popupDescription = document.getElementById("popupItemDescription");
+      const popupReserve = document.getElementById("popupReserveRequired");
+      const closePopup = document.getElementById("closePopup");
+
+      viewButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+          const itemName = event.target.closest(".available-item").querySelector(".item-name").textContent;
+
+          console.log(itemName)
+          if (itemDetails[itemName]) {
+            const details = itemDetails[itemName];
+            popupTitle.textContent = itemName;
+            popupLocation.textContent = `${details.location}`;
+            popupDescription.textContent = `${details.description}`;
+            popupReserve.textContent = `${details.reserveRequired}`;
+            popup.classList.remove("hidden_element");
+          } else {
+            alert("Details not found for the selected item.");
+          }
+        });
+      });
+
+      closePopup.addEventListener("click", () => {
+        popup.classList.add("hidden_element");
+      });
+
     });
 
 
